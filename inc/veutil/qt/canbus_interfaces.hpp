@@ -71,7 +71,8 @@ public:
 			CanProfileCanBms500,
 			CanProfileOceanvolt,
 			CanProfileNone250,
-			CanProfileRvC
+			CanProfileRvC,
+			CanProfileVecanAndCanBms500
 	};
 
 	CanBusProfile(int bitrate, QObject *parent = 0);
