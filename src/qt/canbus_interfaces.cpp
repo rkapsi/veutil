@@ -70,6 +70,12 @@ CanBusProfiles::CanBusProfiles(VeQItemSettings *settings, VeQItem *service, QStr
 	profile->addService(rvc);
 	mProfiles.append(profile);
 
+	// VE.Can & CAN-bus BMS @ 500 kbit/s
+	profile = new CanBusProfile(500000, this);
+	profile->addService(vecan);
+	profile->addService(canBusBms);
+	mProfiles.append(profile);
+
 	VeQItem *item = settings->add(QString("Canbus/%1/Profile").arg(interface),
 								  defaultProfile, 0, mProfiles.count() - 1);
 	item->getValueAndChanges(this, SLOT(dbusItemChanged()));
